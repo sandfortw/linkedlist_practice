@@ -2,43 +2,49 @@ require './lib/linkedlist'
 
 describe LinkedList do 
 
-  it 'can append' do
+  before(:each) do 
+    @linkedlist = LinkedList.new
+    @no
+  end
+
+  xit 'can append' do
+    expect(@linkedlist.append(1)).to eq
 
   end
 
-  it 'can prepend' do
+  xit 'can prepend' do
 
   end
 
-  it 'has a size' do
+  xit 'has a size' do
 
   end
 
-  it 'has a head' do
+  xit 'has a head' do
     
   end
 
-  it 'has a tail' do 
+  xit 'has a tail' do 
 
   end
 
-  it 'can access at an index' do
+  xit 'can access at an index' do
 
   end
 
-  it ' can remove the last element with pop' do
+  xit ' can remove the last element with pop' do
     
   end
 
-  it 'can ask if it contains a value' do
+  xit 'can ask if it contains a value' do
     
   end
 
-  it 'can find a value' do
+  xit 'can find a value' do
     
   end
 
-  it 'can represent my linkedlist as a string' do
+  xit 'can represent my linkedlist as a string' do
     
   end
 end
