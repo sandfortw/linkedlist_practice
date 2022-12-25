@@ -98,12 +98,15 @@ describe LinkedList do
     expect(@linkedlist.contains?(3)).to be true
   end
 
-  xit 'can find a value' do
+  it 'can find a value' do
     @linkedlist.append(@node1)
     @linkedlist.append(@node2)
     @linkedlist.append(@node3)
 
-    expect(@linkedlist.find(@node2)).to eq 1
+    expect(@linkedlist.find(1)).to eq 0
+    expect(@linkedlist.find(2)).to eq 1
+    expect(@linkedlist.find(3)).to eq 2
+
   end
 
   xit 'can represent my linkedlist as a string' do

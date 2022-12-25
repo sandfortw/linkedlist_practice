@@ -84,9 +84,18 @@ class LinkedList
     false
   end
 
-  # def find(value)
-
-  # end
+  def find(value)
+    if contains?(value)
+      entry = @head
+      count = 0
+      until entry.value == value || entry.nil?
+        count += 1
+        entry = entry.next
+      end
+      return count
+    end
+    nil
+  end
 
   # def to_s
 
