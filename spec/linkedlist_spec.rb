@@ -37,12 +37,11 @@ describe LinkedList do
 
   it 'has a size' do
     expect(@linkedlist).to be_a(LinkedList)
-    # require 'pry'; binding.pry
+    expect(@linkedlist.size).to eq 0
     @linkedlist.append(@node1)
     @linkedlist.append(@node2)
-    @linkedlist.prepend(@node1)
-
-    # expect(@linkedlist.size).to eq 3
+    @linkedlist.append(@node3)
+    expect(@linkedlist.size).to eq 3
   end
 
   xit 'has a head' do

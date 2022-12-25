@@ -38,16 +38,16 @@ class LinkedList
     end
   end
 
-  # def size
-  #   count = 0
-  #   return 0 if @head.nil?
-  #   entry = @head
-  #   until entry.nil?
-  #     count += 1
-  #     entry = entry.next
-  #   end
-  #   count
-  # end
+  def size
+    count = 0
+    return 0 if @head.nil?
+    entry = @head
+    until entry.nil?
+      count += 1
+      entry = entry.next
+    end
+    count
+  end
 
   # def at(index)
 
