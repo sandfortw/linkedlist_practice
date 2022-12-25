@@ -25,7 +25,14 @@ describe LinkedList do
 
   it 'can prepend' do
     @linkedlist.prepend(@node1)
-
+    expect(@linkedlist.head).to eq(@node1)
+    expect(@linkedlist.tail).to eq(@node1)
+    @linkedlist.prepend(@node2)
+    expect(@linkedlist.head).to eq(@node2)
+    expect(@linkedlist.tail).to eq(@node1)
+    @linkedlist.prepend(@node3)
+    expect(@linkedlist.head).to eq(@node3)
+    expect(@linkedlist.tail).to eq(@node1)
   end
 
   it 'has a size' do
