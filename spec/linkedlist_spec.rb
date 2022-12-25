@@ -44,13 +44,13 @@ describe LinkedList do
     expect(@linkedlist.size).to eq 3
   end
 
-  xit 'has a head' do
+  it 'has a head' do
     expect(@linkedlist.head).to eq nil
     @linkedlist.append(@node1)
     expect(@linkedlist.head).to eq @node1
   end
 
-  xit 'has a tail' do 
+  it 'has a tail' do 
     expect(@linkedlist.tail). to eq nil
     @linkedlist.append(@node1)
     @linkedlist.append(@node2)
@@ -58,17 +58,27 @@ describe LinkedList do
     expect(@linkedlist.tail).to eq @node2
   end
 
-  xit 'can access at an index' do
+  it 'can access at an index' do
     @linkedlist.append(@node1)
     @linkedlist.append(@node2)
     @linkedlist.append(@node3)
 
-    expect(@linkedlist.at(1)).to eq @node1
-    expect(@linkedlist.at(2)).to eq @node2
-    expect(@linkedlist.at(3)).to eq @node3
+    expect(@linkedlist.at(0)).to eq @node1
+    expect(@linkedlist.at(1)).to eq @node2
+    expect(@linkedlist.at(2)).to eq @node3
   end
 
-  xit ' can remove the last element with pop' do
+  it 'can access previous from index' do
+    @linkedlist.append(@node1)
+    @linkedlist.append(@node2)
+    @linkedlist.append(@node3)
+
+    expect(@linkedlist.previous_from(0)).to eq nil
+    expect(@linkedlist.previous_from(1)).to eq @node1
+    expect(@linkedlist.previous_from(2)).to eq @node2
+  end
+
+  it 'can remove the last element with pop' do
     @linkedlist.append(@node1)
     @linkedlist.append(@node2)
     @linkedlist.append(@node3)

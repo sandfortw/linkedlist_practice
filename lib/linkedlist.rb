@@ -49,13 +49,29 @@ class LinkedList
     count
   end
 
-  # def at(index)
+  def at(index)
+    entry = @head
+    index.times do |i|
+      entry = entry.next
+    end
+    entry
+  end
 
-  # end
+  def previous_from(index)
+    return nil if index == 0
+    entry = @head
+    (index - 1).times do |i|
+      entry = entry.next
+    end
+    entry
+  end
 
-  # def pop
-
-  # end
+  def pop
+    deleted = @tail
+    @tail = previous_from(size - 1)
+    @tail.next = nil
+    deleted
+  end
 
   # def contains?(value)
 
