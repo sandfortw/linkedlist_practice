@@ -73,9 +73,16 @@ class LinkedList
     deleted
   end
 
-  # def contains?(value)
-
-  # end
+  def contains?(value)
+    entry = @head
+    until entry.nil?
+     if entry.value == value
+      return true
+     end
+     entry = entry.next
+    end
+    false
+  end
 
   # def find(value)
 

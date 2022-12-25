@@ -88,13 +88,14 @@ describe LinkedList do
     expect(@linkedlist.size).to eq 1 
   end
 
-  xit 'can ask if it contains a value' do
+  it 'can ask if it contains a value' do
     @linkedlist.append(@node1)
     @linkedlist.append(@node2)
     @linkedlist.append(@node3)
+    # require 'pry'; binding.pry
 
     expect(@linkedlist.contains?(4)).to be false
-    expect(@linkedlist.contains(@node3)).to be true
+    expect(@linkedlist.contains?(3)).to be true
   end
 
   xit 'can find a value' do
