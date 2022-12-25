@@ -11,22 +11,31 @@ describe LinkedList do
     @linkedlist = LinkedList.new
   end
 
-  xit 'can append' do
+  it 'can append' do
     @linkedlist.append(@node1)
-
+    expect(@linkedlist.head).to eq(@node1)
+    expect(@linkedlist.tail).to eq(@node1)
+    @linkedlist.append(@node2)
+    expect(@linkedlist.head).to eq(@node1)
+    expect(@linkedlist.tail).to eq(@node2)
+    @linkedlist.append(@node3)
+    expect(@linkedlist.head).to eq(@node1)
+    expect(@linkedlist.tail).to eq(@node3)
   end
 
-  xit 'can prepend' do
+  it 'can prepend' do
     @linkedlist.prepend(@node1)
 
   end
 
-  xit 'has a size' do
+  it 'has a size' do
+    expect(@linkedlist).to be_a(LinkedList)
+    # require 'pry'; binding.pry
     @linkedlist.append(@node1)
     @linkedlist.append(@node2)
     @linkedlist.prepend(@node1)
 
-    expect(@linkedlist.size).to eq 3
+    # expect(@linkedlist.size).to eq 3
   end
 
   xit 'has a head' do
