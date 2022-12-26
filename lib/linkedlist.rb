@@ -97,9 +97,16 @@ class LinkedList
     nil
   end
 
-  # def to_s
-
-  # end
+  def to_s
+    entry = @head
+    accumulator = []
+    until entry.nil?
+     accumulator << "( #{entry.value} ) ->"
+      entry = entry.next
+    end
+    accumulator << "nil"
+    accumulator.join(" ")
+  end
 
 
 

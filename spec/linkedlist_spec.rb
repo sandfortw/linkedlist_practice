@@ -109,11 +109,11 @@ describe LinkedList do
 
   end
 
-  xit 'can represent my linkedlist as a string' do
+  it 'can represent my linkedlist as a string' do
     @linkedlist.append(@node1)
     @linkedlist.append(@node2)
     @linkedlist.append(@node3)
 
-    expect(@linkedlist.to_s).to eq '( #{@node1} ) -> ( #{@node2} ) -> ( #{@node3} ) -> nil'
+    expect(@linkedlist.to_s).to eq '( 1 ) -> ( 2 ) -> ( 3 ) -> nil'
   end
 end
