@@ -43,7 +43,7 @@ class LinkedList
 
   def at(index)
     entry = @head
-    index.times do |_i|
+    index.times do
       entry = entry.next
     end
     entry
@@ -98,5 +98,19 @@ class LinkedList
     end
     accumulator << 'nil'
     accumulator.join(' ')
+  end
+
+  def insert_at(value, index)
+    new_node = Node.new(value)
+    if index == 0
+      prepend(new_node)
+    elsif index == (size - 1)
+      append(new_node)
+    else
+      previous = at((index - 1))
+      after = at((index))
+      previous.next = new_node
+      new_node.next = after
+    end
   end
 end

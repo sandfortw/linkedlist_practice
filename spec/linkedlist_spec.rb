@@ -90,7 +90,6 @@ describe LinkedList do
     @linkedlist.append(@node1)
     @linkedlist.append(@node2)
     @linkedlist.append(@node3)
-    # require 'pry'; binding.pry
 
     expect(@linkedlist.contains?(4)).to be false
     expect(@linkedlist.contains?(3)).to be true
@@ -112,5 +111,15 @@ describe LinkedList do
     @linkedlist.append(@node3)
 
     expect(@linkedlist.to_s).to eq '( 1 ) -> ( 2 ) -> ( 3 ) -> nil'
+  end
+
+  it 'can add a new node at an index' do
+    @linkedlist.append(@node1)
+    @linkedlist.append(@node2)
+    @linkedlist.append(@node3)
+    @linkedlist.insert_at(4, 1)
+    expect(@linkedlist.size).to eq 4 
+    expect(@linkedlist.to_s).to eq '( 1 ) -> ( 4 ) -> ( 2 ) -> ( 3 ) -> nil'
+
   end
 end
