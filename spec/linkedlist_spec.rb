@@ -120,6 +120,16 @@ describe LinkedList do
     @linkedlist.insert_at(4, 1)
     expect(@linkedlist.size).to eq 4 
     expect(@linkedlist.to_s).to eq '( 1 ) -> ( 4 ) -> ( 2 ) -> ( 3 ) -> nil'
+  end
+
+  it 'can remove a node at an index' do
+    @linkedlist.append(@node1)
+    @linkedlist.append(@node2)
+    @linkedlist.append(@node3)
+    @linkedlist.remove_at(1)
+    expect(@linkedlist.size).to eq 2
+    expect(@linkedlist.to_s).to eq '( 1 ) -> ( 3 ) -> nil'
+
 
   end
 end

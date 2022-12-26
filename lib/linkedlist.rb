@@ -113,4 +113,17 @@ class LinkedList
       new_node.next = after
     end
   end
+
+  def remove_at(index)
+    if index == 0
+      @head = @head.next
+    elsif index == (size - 1)
+      @tail = at((index - 1))
+      @tail.next = nil
+    else
+      previous = at((index - 1))
+      after = at((index + 1))
+      previous.next = after
+    end
+  end
 end
