@@ -9,20 +9,11 @@ class LinkedList
     @tail = nil
   end
 
-  def each
-    return nil if @head.nil?
-    entry = @head
-    until entry.nil?
-      yield entry
-      entry = entry.next
-    end
-  end
-
   def prepend(value)
     if @head.nil?
       @head = value
       @tail = value
-    else 
+    else
       value.next = @head
       @head = value
     end
@@ -41,6 +32,7 @@ class LinkedList
   def size
     count = 0
     return 0 if @head.nil?
+
     entry = @head
     until entry.nil?
       count += 1
@@ -51,7 +43,7 @@ class LinkedList
 
   def at(index)
     entry = @head
-    index.times do |i|
+    index.times do |_i|
       entry = entry.next
     end
     entry
@@ -59,8 +51,9 @@ class LinkedList
 
   def previous_from(index)
     return nil if index == 0
+
     entry = @head
-    (index - 1).times do |i|
+    (index - 1).times do |_i|
       entry = entry.next
     end
     entry
@@ -76,10 +69,9 @@ class LinkedList
   def contains?(value)
     entry = @head
     until entry.nil?
-     if entry.value == value
-      return true
-     end
-     entry = entry.next
+      return true if entry.value == value
+
+      entry = entry.next
     end
     false
   end
@@ -101,13 +93,10 @@ class LinkedList
     entry = @head
     accumulator = []
     until entry.nil?
-     accumulator << "( #{entry.value} ) ->"
+      accumulator << "( #{entry.value} ) ->"
       entry = entry.next
     end
-    accumulator << "nil"
-    accumulator.join(" ")
+    accumulator << 'nil'
+    accumulator.join(' ')
   end
-
-
-
 end

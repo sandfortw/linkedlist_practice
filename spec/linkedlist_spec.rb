@@ -1,10 +1,8 @@
 require './lib/linkedlist'
 require './lib/node'
 
-
-describe LinkedList do 
-
-  before(:each) do 
+describe LinkedList do
+  before(:each) do
     @node1 = Node.new(1)
     @node2 = Node.new(2)
     @node3 = Node.new(3)
@@ -50,8 +48,8 @@ describe LinkedList do
     expect(@linkedlist.head).to eq @node1
   end
 
-  it 'has a tail' do 
-    expect(@linkedlist.tail). to eq nil
+  it 'has a tail' do
+    expect(@linkedlist.tail).to eq nil
     @linkedlist.append(@node1)
     @linkedlist.append(@node2)
     @linkedlist.prepend(@node1)
@@ -85,7 +83,7 @@ describe LinkedList do
 
     expect(@linkedlist.pop).to eq @node3
     expect(@linkedlist.pop).to eq @node2
-    expect(@linkedlist.size).to eq 1 
+    expect(@linkedlist.size).to eq 1
   end
 
   it 'can ask if it contains a value' do
@@ -106,7 +104,6 @@ describe LinkedList do
     expect(@linkedlist.find(1)).to eq 0
     expect(@linkedlist.find(2)).to eq 1
     expect(@linkedlist.find(3)).to eq 2
-
   end
 
   it 'can represent my linkedlist as a string' do

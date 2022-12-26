@@ -5,5 +5,4 @@ class Node
     @value = value
     @next = nil
   end
-
 end
